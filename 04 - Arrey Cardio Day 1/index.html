@@ -92,6 +92,7 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+///A
     const transportation = data.reduce(function(obj, item) {
       if (!obj[item]){
         obj[item] = 0;
@@ -102,31 +103,15 @@
 
     console.log(transportation);
 
+///B
+    const sumInstances = data.reduce(function(howMany, x){
+      if (!howMany[x]){
+        howMany[x]=0;
+      } howMany[x]++;
+      return howMany;
+    }, {});
 
-    
-    // howMany= {
-    //   'car': 0,
-    //   'truck' : 0,
-    //   'van' : 0,
-
-    // }
-
-    // const sumInstances = data.map(function(x){
-
-    //   console.log(x);
-    //   console.log(Object.keys(howMany));
-    //   console.log((Object.keys(howMany)).includes(x));
-    //   console.log(howMany[x]+1);
-      
-    //   if (x in (Object.keys(howMany)) == true) {
-    //     howMany[x] = howMany[x] + 1
-    //   } howMany.x = 0;
-    //   return howMany
-    //   });
-
-    // console.log(howMany);
-
-
+    console.log(sumInstances);
   </script>
 </body>
 </html>
