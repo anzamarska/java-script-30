@@ -9,8 +9,20 @@ function getVideo() {
     .getUserMedia({ video: true, audio: false })
     .then((localMediaStream) => {
       console.log("localMediaSteam", localMediaStream);
-      video.src = 
+      video.srcObject = localMediaStream;
+      video.play();
+    })
+    .catch((err) => {
+      console.log("noooo", err);
     });
+}
+
+function paintToCanvas() {
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+  console.log(width, height);
+  canvas.width = width;
+  canvas.height = height;
 }
 
 console.log("media :");
